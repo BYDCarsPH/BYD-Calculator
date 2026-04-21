@@ -43,16 +43,15 @@ body::before {
   z-index: 1;
   width: 95%;
   max-width: 500px;
-
-  /* moved background here */
   background: url('../img/ACM.png') no-repeat center center;
   background-size: cover;
-
   border-radius: 50px;
   padding: 25px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.25);
   margin: 10px auto 30px auto;
   box-sizing: border-box;
+  opacity: 0.25;
+  z-index: 0;
 }
 
 h2, h3 {
