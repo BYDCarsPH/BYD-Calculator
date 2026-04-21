@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BYD Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="BYD_Calculator.css" rel="stylesheet">
+</head>
+<body>
+  <div class="header">
+    <img src="rightlogo.png" alt="Right Logo">
+  </div>
+  <div class="container">
+    <h2>BYD Calculator</h2>
+    <!-- ICE Section -->
+    <h3>Current Vehicle Info</h3>
+    <label for="currentVehicle">What vehicle are you currently using?</label>
+    <input type="text" id="currentVehicle" placeholder="Enter vehicle name" oninput="updateICETitle()">
+    <label for="fuelEconomy">Average fuel economy in km/L?</label>
+    <input type="number" id="fuelEconomy" placeholder="e.g., 12" oninput="updateICEEquation()">
+    <label for="fuelType">Fuel Type</label>
+    <select id="fuelType" onchange="updateICEPrice()">
+      <option value="">Select Fuel Type</option>
+      <option value="gasoline">Gasoline</option>
+      <option value="diesel">Diesel</option>
+    </select>
+    <label for="yearlyKm">How many kilometers do you drive in a year?</label>
+    <input type="number" id="yearlyKm" placeholder="e.g., 15000">
+    <div class="equation" id="iceEquationTitle"><b>ICE Consumption</b></div>
+    <div class="equation" id="iceEquation">ICE cost/km: </div>
+
+    <!-- BEV Section -->
+    <h3>BEV Info</h3>
+    <label for="bevModel">BEV Model</label>
+    <select id="bevModel" onchange="fillBEVData()">
+      <option value="">Select Model</option>
+      <option value="Seagull">Seagull</option>
+      <option value="Dolphin">Dolphin</option>
+      <option value="Atto3Premium">Atto 3 Premium</option>
+      <option value="Atto3Dynamic">Atto 3 Dynamic</option>
+      <option value="Emax7Superior">Emax 7 Superior Captain</option>
+      <option value="Emax7Standard">Emax 7 Standard</option>
+      <option value="SealPerformance">Seal EV Performance</option>
+      <option value="SealAdvanced">Seal EV Advanced</option>
+      <option value="Han">Han</option>
+      <option value="Tang">Tang EV</option>
+    </select>
+    <label for="battery">Battery Capacity (kWh)</label>
+    <input type="number" id="battery" readonly>
+    <label for="evRange">EV Range (km)</label>
+    <input type="number" id="evRange" readonly>
+    <label for="electricRate">Home Electricity Rate (₱/kWh)</label>
+    <input type="number" id="electricRate" value="14" step="0.01">
+    <div class="equation" id="bevEquationTitle"><b>BEV Consumption</b></div>
+    <div class="equation" id="bevEquation">EV cost/km: </div>
+    <button onclick="computeSavings()">Yearly Savings</button>
+    <div class="equation" id="savingsEquation">Yearly Savings: </div>
+  </div>
+<script src="BYD_Calcu.js"></script>
+</body>
+</html>
