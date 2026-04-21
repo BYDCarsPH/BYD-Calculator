@@ -92,3 +92,11 @@
         height: 30px;
       }
     }
+
+    @media screen and (max-width: 768px) {
+      body, html {
+        background-position: center center;
+        background-size: cover;
+        background-attachment: scroll;
+      }
+    }
