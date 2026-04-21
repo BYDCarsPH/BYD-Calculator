@@ -1,102 +1,123 @@
-    body, html, * {
-      font-family: 'Montserrat', Arial, sans-serif !important;
-    }
-    body, html {
-      margin: 0;
-      padding: 0;
-      min-height: 100%;
-      display: block;
-      background: url('../img/ACM.png') no-repeat center center fixed;
-      background-size: cover;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      top:0; left:0;
-      width:100%; height:100%;
-      background: rgba(255,255,255,0.2);
-      backdrop-filter: blur(4px);
-      z-index: 0;
-    }
-    .header {
-      width: 95%;
-      max-width: 500px;
-      margin: 20px auto 10px auto;
-      display: flex;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-      justify-content:center;
-    }
-    .header img {
-      height: 50px;
-      width: auto;
-    }
-    .container {
-      position: relative;
-      z-index: 1;
-      width: 95%;
-      max-width: 500px;
-      background: #ffffffcf;
-      border-radius: 50px;
-      padding: 25px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-      margin: 10px auto 30px auto;
-      box-sizing: border-box;
-    }
-    h2, h3 {
-      text-align: center;
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: 600;
-    }
-    input, select, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
-    button {
-      background-color: #59cde4;
-      color: white;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      margin-top: 25px;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    .equation {
-      background-color: #f0f0f0;
-      padding: 12px;
-      margin-top: 15px;
-      border-radius: 5px;
-      text-align: center;
-      word-break: break-word;
-    }
-    @media screen and (max-width: 400px) {
-      input, select, button {
-        font-size: 14px;
-        padding: 10px;
-      }
-      .equation {
-        font-size: 14px;
-      }
-      .header img {
-        height: 30px;
-      }
-    }
+/* GLOBAL RESET */
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', Arial, sans-serif !important;
+}
 
-    @media screen and (max-width: 768px) {
-      body, html {
-        background-position: center center;
-        background-size: cover;
-        background-attachment: scroll;
-      }
-    }
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  height: 100%;
+}
+
+/* BACKGROUND */
+body {
+  position: relative;
+  background: url('../img/ACM.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* OVERLAY (soft blur effect) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+/* HEADER */
+.header {
+  width: 95%;
+  max-width: 500px;
+  margin: 20px auto 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.header img {
+  height: 50px;
+  width: auto;
+}
+
+/* MAIN CONTAINER */
+.container {
+  position: relative;
+  z-index: 1;
+  width: 95%;
+  max-width: 500px;
+  margin: 10px auto 30px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+
+/* TEXT */
+h2, h3 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+/* INPUTS */
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+/* BUTTON */
+button {
+  background-color: #59cde4;
+  color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* RESULT BOX */
+.equation {
+  background-color: #f0f0f0;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 5px;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 400px) {
+  input, select, button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .header img {
+    height: 35px;
+  }
+}
